@@ -2,7 +2,7 @@ import React, { Component } from "react";
 
 export default class Book extends Component {
 	render() {
-		const { title, cover, description } = this.props.book;
+		const { title, cover, description, detail } = this.props.book;
 		return (
 			// <div>
 			//     <p> {this.props.book.title} </p>
@@ -18,9 +18,9 @@ export default class Book extends Component {
 						/>
 					</div>
 					<div className="flip-card-back">
-						<h1> {title} </h1>
+						<h2> {title} </h2>
 						<p> {description} </p>
-						<p>We love that guy</p>
+						<a href={detail} >More info</a>
 					</div>
 				</div>
 			</div>
@@ -28,25 +28,3 @@ export default class Book extends Component {
 	}
 }
 
-//STYLES
-// const bookCover = {
-// 	width: "200px",
-// 	height: "300px",
-// };
-
-// IMAGE FLIP FROM W3Schools
-
-{
-	/* <div className="flip-card">
-    <div className="flip-card-inner">
-        <div className="flip-card-front">
-            <img src= {cover} alt="Book Cover" style="width:300px;height:300px;">
-        </div>
-        <div className="flip-card-back">
-            <h2> {book.title} </h2>
-            <p>Architect & Engineer</p>
-            <p>We love that guy</p>
-        </div>
-    </div>
-</div> */
-}

@@ -8,7 +8,13 @@ const API = "https://api.myjson.com/bins/zyv02";
 export default class App extends Component {
 	state = {
 		books: [],
+		searchString: "",
 	};
+  //METHODS
+  // searchBook() {
+
+  // }
+
 	componentDidMount() {
 		fetch(API)
 			.then(res => res.json())
