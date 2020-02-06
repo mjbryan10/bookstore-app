@@ -6,14 +6,19 @@ import "./App.scss";
 const API = "https://api.myjson.com/bins/zyv02";
 
 export default class App extends Component {
-	state = {
-		books: [],
-		searchString: "",
-	};
-  //METHODS
-  // searchBook() {
+  constructor(props) {
+    super(props);
+    this.state = {
+      books: [],
+      query: ""
+    };
+  }
 
-  // }
+  //METHODS
+  searchBook = (query) => {
+    console.log(this)
+    this.setState({query: query})
+  }
 
 	componentDidMount() {
 		fetch(API)
@@ -23,9 +28,9 @@ export default class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<Header />
+				<Header searchBook={this.searchBook} />
 				<div className="books-container">
-					<BookShelf books={this.state.books} />
+					<BookShelf books={this.state.books} query={this.state.query} />
 				</div>
 			</div>
 		);

@@ -1,15 +1,12 @@
 import React, { Component } from "react";
 // import ReactFancyBox from "react-fancybox";
-import "react-fancybox/lib/fancybox.css";
+// import "react-fancybox/lib/fancybox.css";
 
 export default class Book extends Component {
+
 	render() {
 		const { title, cover, description, detail } = this.props.book;
 		return (
-			// <div>
-			//     <p> {this.props.book.title} </p>
-			//     <img src= {cover} alt="Book Cover" style={bookCover} />
-			// </div>
 			<div className="flip-card book">
 				<div className="flip-card-inner">
 					<div className="flip-card-front">
@@ -18,7 +15,6 @@ export default class Book extends Component {
 					<div className="flip-card-back">
 						<h2> {title} </h2>
 						<p> {description} </p>
-						{/* <a href={detail}>More info</a> */}
                         <a data-fancybox="gallery" href={detail}>More info</a>
 						
 					</div>
