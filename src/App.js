@@ -16,7 +16,6 @@ export default class App extends Component {
 
   //METHODS
   searchBook = (query) => {
-    console.log(this)
     this.setState({query: query})
   }
 
