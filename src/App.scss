@@ -68,10 +68,21 @@ header {
 			font-size: large;
 			height: 2em;
 		}
+		input {
+			padding-left: 0.5em;
+		}
 		button {
 			padding: 0.3em;
 			// border-radius: .2em;
 		}
+	}
+}
+.catch-search-container {
+	max-width: 800px;
+	margin: 0 auto;
+	h3 {
+		text-align: center;
+		margin: 2em;
 	}
 }
 //BOOKS
@@ -124,8 +135,6 @@ header {
   /* Position the front and back side */
   .flip-card-front, .flip-card-back {
 	position: absolute;
-	// width: 100%;
-	// height: 100%;
 	width: $book-width;
 	height: $book-height;
 	-webkit-backface-visibility: hidden; /* Safari */
@@ -161,8 +170,8 @@ header {
 			background: $btn-color_hover;
 		}
 	}
-	// p {
-	// 	max-height: 200px;
-	// 	overflow: scroll;
-	// }
   }
+//   .book:hover, .flip-card:hover, .flip-card-inner:hover, .flip-card-back:hover {
+// 	width: $book-width * 2;
+// 	height: $book-height * 2;
+//   }

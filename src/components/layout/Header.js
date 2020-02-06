@@ -21,7 +21,8 @@ export default class Header extends Component {
 						type="text"
 						id="search"
 						placeholder="Search for a book.."
-						onChange={this.onChange}
+                        // onInput={this.onChange}
+                        onChange={this.onChange}
 					/>
 				</div>
 			</header>
