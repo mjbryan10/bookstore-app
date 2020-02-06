@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+// import ReactFancyBox from "react-fancybox";
+import "react-fancybox/lib/fancybox.css";
 
 export default class Book extends Component {
 	render() {
@@ -11,20 +13,17 @@ export default class Book extends Component {
 			<div className="flip-card book">
 				<div className="flip-card-inner">
 					<div className="flip-card-front">
-                        <img 
-                            className="book-cover"
-							src={cover}
-                            alt="Book Cover"
-						/>
+						<img className="book-cover" src={cover} alt="Book Cover" />
 					</div>
 					<div className="flip-card-back">
 						<h2> {title} </h2>
 						<p> {description} </p>
-						<a href={detail} >More info</a>
+						{/* <a href={detail}>More info</a> */}
+                        <a data-fancybox="gallery" href={detail}>More info</a>
+						
 					</div>
 				</div>
 			</div>
 		);
 	}
 }
-

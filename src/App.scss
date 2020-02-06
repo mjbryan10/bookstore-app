@@ -9,6 +9,40 @@ body {
 	// font-family: Arial, Helvetica, sans-serif;
 	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+button {//OVERIDES (https://css-tricks.com/overriding-default-button-styles/)
+	& {
+		display: inline-block;
+		border: none;
+		// padding: 1rem 2rem;
+		margin: 0;
+		text-decoration: none;
+		// background: #0069ed;
+		color: #ffffff;
+		font-family: sans-serif;
+		font-size: 1rem;
+		cursor: pointer;
+		text-align: center;
+		transition: background 250ms ease-in-out, 
+					transform 150ms ease;
+		-webkit-appearance: none;
+		-moz-appearance: none;
+	}
+	
+	&:hover,
+	&:focus {
+		background: $btn-color_hover;
+	}
+	
+	&:focus {
+		outline: 1px dotted #fff;
+		outline-offset: -4px;
+	}
+	
+	&:active {
+		transform: scale(0.99);
+	}
+}
 button {
 	cursor: pointer;
 	background: $btn-color;
@@ -25,13 +59,16 @@ header {
 	h1 {
 		text-transform: uppercase;
 	}
-	input, button {
-		font-size: large;
-		height: 2em;
-	}
-	button {
-		padding: 0.3em;
-		border-radius: .2em;
+	.search-container {
+		margin: 1em;
+		input, button {
+			font-size: large;
+			height: 2em;
+		}
+		button {
+			padding: 0.3em;
+			// border-radius: .2em;
+		}
 	}
 }
 //BOOKS
@@ -99,10 +136,11 @@ header {
   }
   
   /* Style the back side */
-  .flip-card-back {
+  .flip-card-back { //TODO: Amazing Art design breaking style
 	background-color: $primary-color;
 	color: white;
 	transform: rotateY(180deg);
+	padding: 0.3rem;
 	h2 {
 		margin-bottom: .5em;
 	}

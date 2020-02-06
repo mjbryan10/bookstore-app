@@ -6,7 +6,7 @@ export default function Header() {
 		<header>
 			<img src={Logo} alt="Logo" style={logoStyle} />
 			<h1>Ubiqum Bookstore</h1>
-			<div>
+			<div className="search-container" >
 				<input type="text" id="search" placeholder="Search for book.." />
 				<button type="submit">Search</button>
 			</div>
