@@ -1,15 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react'
 import Header from './components/layout/Header';
 import BookShelf from './components/BookShelf';
 import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
+const API = 'https://api.myjson.com/bins/zyv02';
+
+export default class App extends Component {
+  state = {
+    books: []
+  }
+  componentDidMount() {
+    fetch(API)
+      .then(res => res.json())
+      .then(data => this.setState( { books: data.books }))
+  }
+  render() {
+    return (
+      <div className="App">
       <Header />
       <BookShelf />
     </div>
-  );
+    )
+  }
 }
 
-export default App;
