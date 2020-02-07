@@ -10,7 +10,7 @@ $text-color: white;
     position: fixed;
     right:0;
     bottom:25px;
-    margin-right: 50px;
+    margin-right: -50px;
     transition: .5s ease;
     opacity: 0.6;
     background-color: $bg-color;
@@ -18,6 +18,12 @@ $text-color: white;
     cursor: pointer;
     &:hover {
         opacity: 1;
+    }
+    &.active {
+        margin-right: 50px;
+        .scroll-text { 
+            animation: jump 0.7s ease .3s 2 normal none;
+        }
     }
     .scroll-text {
         font-size: 50px;

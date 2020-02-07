@@ -2,6 +2,21 @@ import React, { Component } from "react";
 import "./scrollUp.scss";
 
 export default class ScrollUp extends Component {
+	state = {
+		isScrolled: false,
+	};
+	componentDidMount() {
+		window.addEventListener("scroll", this.scrollActivate);
+	}
+	scrollActivate = () => {
+		let height = 400; // Change this number depending on where you wish it to appear.
+		let y = window.scrollY;
+		if (y >= height) {
+			this.setState({isScrolled: true})
+		} else if (y < height) {
+			this.setState({isScrolled: false})
+		}
+	};
 	smoothScroll(e) {
 		e.preventDefault();
 		let duration = 1000;
@@ -17,7 +32,8 @@ export default class ScrollUp extends Component {
 			window.scrollTo(0, run);
 			if (timeElapsed < duration) requestAnimationFrame(animation);
 		}
-		function ease(t, b, c, d) {//http://gizma.com/easing/ for equations
+		function ease(t, b, c, d) {
+			//http://gizma.com/easing/ for equations
 			t /= d;
 			return c * t * t * t + b;
 		}
@@ -25,9 +41,9 @@ export default class ScrollUp extends Component {
 	}
 	render() {
 		return (
-			<div className="scroll-container">
+			<div className={"scroll-container" + (this.state.isScrolled ? ' active' : '')}>
 				{/*eslint-disable-next-line jsx-a11y/anchor-is-valid*/}
-				<a href="#" className="scroll-text" onClick={this.smoothScroll} >
+				<a href="#" className="scroll-text" onClick={this.smoothScroll}>
 					&uarr;
 				</a>
 			</div>

@@ -87,6 +87,9 @@ header {
 .catch-search-container {
 	max-width: 800px;
 	margin: 0 auto;
+	display: flex;
+    flex-flow: column;
+    align-items: center;
 	h3 {
 		text-align: center;
 		margin: 2em;
