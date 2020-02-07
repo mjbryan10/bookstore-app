@@ -16,6 +16,10 @@ export default class BookShelf extends Component {
             )
                     
         }
-        return filteredBooks.map(book => <Book book={book} />);
+        return (
+            <div className="books-container">
+                {filteredBooks.map((book, index) => <Book book={book} key={index} />)}
+            </div>
+            );
 	}
 }

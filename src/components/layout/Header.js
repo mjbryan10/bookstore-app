@@ -6,9 +6,12 @@ export default class Header extends Component {
 		query: "",
 	};
 	//METHODS:
-	onChange = (e) => {
-        this.setState({ [e.target.name]: e.target.value })
-        this.props.searchBook(this.state.query);
+	onChange = (e) => { //TODO: Sort search bug (updates every other key)
+		
+        // this.setState({ [e.target.name]: e.target.value })
+		// this.props.searchBook(this.state.query);
+		
+        this.props.searchBook(e.target.value);
     }
 	render() {
 		return (
@@ -22,7 +25,7 @@ export default class Header extends Component {
 						id="search"
 						placeholder="Search for a book.."
                         // onInput={this.onChange}
-                        onChange={this.onChange}
+                        onKeyUp={this.onChange}
 					/>
 				</div>
 			</header>
