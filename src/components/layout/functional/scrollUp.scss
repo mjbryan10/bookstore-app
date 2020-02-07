@@ -41,9 +41,6 @@ $jump-height: 0.4rem; //How high you want the arrow to jump
 	border-radius: $size;
 	z-index: 100;
 	position: fixed;
-	// bottom: 0;
-	// right: $page-offset;
-	// margin-bottom: -$size;
 	transition: 0.5s ease;
 	background-color: $bg-color;
 	text-align: center;
@@ -52,7 +49,6 @@ $jump-height: 0.4rem; //How high you want the arrow to jump
 		background-color: $bg-color_hover;
 	}
 	&.active {
-		// margin-bottom: $page-offset;
 		.scroll-text {
 			animation: jump 0.7s ease 0.3s 2 normal none;
 		}
